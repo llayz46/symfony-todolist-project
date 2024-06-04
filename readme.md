@@ -1,0 +1,1 @@
+First project using symfony. This project aims to create a simple todolist to learn symfony.
