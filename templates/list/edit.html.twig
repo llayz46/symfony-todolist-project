@@ -3,11 +3,22 @@
 {% block title %}Edit Todolist{% endblock %}
 
 {% block body %}
-    <h1>Edit Todolist</h1>
+  <div class="text-secondary pt-5 text-center container">
+    <a class="btn btn-sm btn-primary text-white d-flex align-items-center btn-layz" href="{{ path('app_list_index') }}">
+      <i class="bi bi-arrow-left-short fs-5"></i>
+      retournez à vos listes
+    </a>
+    <h1 class="display-5 fw-bold">{{ todolist.title }}</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="fs-5 mb-4">Remplissez le formulaire ci-dessous pour modifier la liste !</p>
+    </div>
+  </div>
 
-    {{ include('list/_form.html.twig', {'button_label': 'Update'}) }}
+  <div class="container">
+    {{ include('list/_form.html.twig', {'button_label': 'Modifier'}) }}
+    <div class="mt-2">
+      {{ include('list/_delete_form.html.twig', {'button_label': 'Supprimer'}) }}
+    </div>
+  </div>
 
-    <a href="{{ path('app_list_index') }}">back to list</a>
-
-    {{ include('list/_delete_form.html.twig') }}
 {% endblock %}

@@ -1,20 +1,24 @@
 <div class="container">
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-    <p class="col-md-4 mb-0 text-body-secondary">© 2024 Company, Inc</p>
+    <p class="col-md-4 mb-0 text-body-secondary">© 2024 layz, Inc</p>
 
-    <a href="/"
+    <a href="{{ path('app_home') }}"
        class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-      <svg class="bi me-2" width="40" height="32">
-        <use xlink:href="#bootstrap"></use>
-      </svg>
+      <img src="{{ asset('build/images/layzTaskerLogo.svg') }}" alt="" height="30">
     </a>
 
     <ul class="nav col-md-4 justify-content-end">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+      <li>
+        <a href="{{ path('app_home') }}" class="nav-link px-2 text-body-secondary">Accueil</a>
+      </li>
+      <li>
+        <a href="{{ path('app_list_index') }}" class="nav-link px-2 text-body-secondary">Mes listes</a>
+      </li>
+      {% if is_granted('ROLE_ADMIN') %}
+        <li>
+          <a href="{{ path('app_admin') }}" class="nav-link px-2 text-body-secondary">Dashboard Admin</a>
+        </li>
+      {% endif %}
     </ul>
   </footer>
 </div>
