@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes listes - {{ site_name }}{% endblock %}
+
+{% block body %}
+  <div class="text-secondary px-4 py-5 text-center">
+    <h1 class="display-5 fw-bold">Mes listes</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="fs-5 mb-4">Retrouvez ici toutes vos listes. Vous pouvez également en créer de nouvelles pour organiser
+        vos tâches et projets de manière efficace. Simplifiez votre gestion quotidienne en ayant tout à portée de main
+        !</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a href="{{ path('app_list_new') }}" class="btn btn-primary btn-lg px-4 me-sm-3 fw-bold text-light">Créer une
+          liste</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      {% for list in todolists %}
+        {% include "partials/_listcard.html.twig" with {'list': list} %}
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

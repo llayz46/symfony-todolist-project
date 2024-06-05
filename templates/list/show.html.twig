@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Todolist{% endblock %}
+
+{% block body %}
+  <div class="text-secondary pt-5 text-center container">
+    <a class="btn btn-sm btn-primary text-white d-flex align-items-center btn-layz" href="{{ path('app_list_index') }}">
+      <i class="bi bi-arrow-left-short fs-5"></i>
+      retournez à vos listes
+    </a>
+    <h1 class="display-5 fw-bold">{{ todolist.title }}</h1>
+    <div class="col-lg-6 mx-auto mt-4 d-flex gap-1 justify-content-center">
+      <a href="" class="btn btn-primary text-white">Ajouter des tâches</a>
+      <a href="{{ path('app_list_edit', {'id': todolist.id}) }}" class="btn btn-secondary text-white">Modifier la liste</a>
+      {{ include('list/_delete_form.html.twig') }}
+    </div>
+  </div>
+
+  {#    <a href="{{ path('app_list_edit', {'id': todolist.id}) }}">edit</a> #}
+
+{% endblock %}
