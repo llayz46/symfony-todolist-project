@@ -1,5 +1,9 @@
 twig:
     file_name_pattern: '*.twig'
+    globals:
+        site_name: '%site_name%'
+    form_themes:
+        - 'bootstrap_5_layout.html.twig'
 
 when@test:
     twig:

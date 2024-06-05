@@ -3,3 +3,58 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+app_logout:
+    path:
+        en: /logout
+        fr: /deconnexion
+    methods: GET
+
+app_login:
+    path:
+        en: /login
+        fr: /connexion
+    controller: App\Controller\SecurityController::login
+    methods: GET|POST
+
+app_register:
+    path:
+        en: /register
+        fr: /inscription
+    controller: App\Controller\RegistrationController::register
+    methods: GET|POST
+
+app_list_index:
+    path:
+        en: /list/
+        fr: /liste/
+    controller: App\Controller\ListController::browse
+    methods: GET
+
+app_list_new:
+    path:
+        en: /list/new
+        fr: /liste/creer
+    controller: App\Controller\ListController::new
+    methods: GET|POST
+
+app_list_show:
+    path:
+        en: /list/{id}
+        fr: /liste/{id}
+    controller: App\Controller\ListController::show
+    methods: GET
+
+app_list_edit:
+    path:
+        en: /list/{id}/edit
+        fr: /liste/{id}/modifier
+    controller: App\Controller\ListController::edit
+    methods: GET|POST
+
+app_list_delete:
+    path:
+        en: /list/{id}
+        fr: /liste/{id}
+    controller: App\Controller\ListController::delete
+    methods: DELETE|POST
